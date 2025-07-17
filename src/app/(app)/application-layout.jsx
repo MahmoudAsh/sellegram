@@ -92,22 +92,13 @@ export function ApplicationLayout({ events, children }) {
             <Dropdown>
               <DropdownButton as={SidebarItem}>
                 <Avatar src="/teams/catalyst.svg" />
-                <SidebarLabel>Catalyst</SidebarLabel>
+                <SidebarLabel>Sellegram</SidebarLabel>
                 <ChevronDownIcon />
               </DropdownButton>
               <DropdownMenu className="min-w-80 lg:min-w-64" anchor="bottom start">
                 <DropdownItem href="/settings">
                   <Cog8ToothIcon />
                   <DropdownLabel>Settings</DropdownLabel>
-                </DropdownItem>
-                <DropdownDivider />
-                <DropdownItem href="#">
-                  <Avatar slot="icon" src="/teams/catalyst.svg" />
-                  <DropdownLabel>Catalyst</DropdownLabel>
-                </DropdownItem>
-                <DropdownItem href="#">
-                  <Avatar slot="icon" initials="BE" className="bg-purple-500 text-white" />
-                  <DropdownLabel>Big Events</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
                 <DropdownItem href="#">
@@ -133,7 +124,9 @@ export function ApplicationLayout({ events, children }) {
                 <SidebarLabel>Orders</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/chat" current={pathname.startsWith('/chat')}>
-                <TicketIcon />
+                <svg className='size-5 fill-gray-400' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                  <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0 1 12 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 0 1-3.476.383.39.39 0 0 0-.297.17l-2.755 4.133a.75.75 0 0 1-1.248 0l-2.755-4.133a.39.39 0 0 0-.297-.17 48.9 48.9 0 0 1-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97Z" clip-rule="evenodd" />
+                </svg>
                 <SidebarLabel>Chat</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/settings" current={pathname.startsWith('/settings')}>

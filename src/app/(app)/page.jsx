@@ -35,7 +35,7 @@ export default async function Home() {
             <TableHeader>Order number</TableHeader>
             <TableHeader>Purchase date</TableHeader>
             <TableHeader>Customer</TableHeader>
-            <TableHeader>Event</TableHeader>
+            <TableHeader>Product</TableHeader>
             <TableHeader className="text-right">Amount</TableHeader>
           </TableRow>
         </TableHead>
