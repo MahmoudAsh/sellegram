@@ -21,7 +21,7 @@ export default async function Orders() {
       <div className="mt-8 text-center mt-96">
         <ChatBubbleLeftIcon className="size-8 text-zinc-500 mx-auto" />
         <p className="text-md text-zinc-500 text-center mt-4">Chat feature is coming soon</p>
-        <p className="text-md text-zinc-500 text-center">You can request early access below</p>
+        <p className="text-md text-zinc-500 text-center">You can request early access below now</p>
       </div>
       {/* <Table className="mt-8 [--gutter:--spacing(6)] lg:[--gutter:--spacing(10)]">
         <TableHead>
