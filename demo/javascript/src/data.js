@@ -725,7 +725,7 @@ export async function getEvents() {
   return [
     {
       id: 1000,
-      name: 'Bear Hug: Live in Concert',
+      name: 'Sticker of Figma',
       url: '/events/1000',
       date: 'May 20, 2024',
       time: '10 PM',

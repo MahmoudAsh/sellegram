@@ -109,6 +109,10 @@ export function ApplicationLayout({ events, children }) {
                   <Avatar slot="icon" initials="BE" className="bg-purple-500 text-white" />
                   <DropdownLabel>Big Events</DropdownLabel>
                 </DropdownItem>
+                <DropdownItem href="#">
+                  <Avatar slot="icon" initials="BE" className="bg-purple-500 text-white" />
+                  <DropdownLabel>ash Studio</DropdownLabel>
+                </DropdownItem>
                 <DropdownDivider />
                 <DropdownItem href="#">
                   <PlusIcon />
@@ -131,6 +135,10 @@ export function ApplicationLayout({ events, children }) {
               <SidebarItem href="/orders" current={pathname.startsWith('/orders')}>
                 <TicketIcon />
                 <SidebarLabel>Orders</SidebarLabel>
+              </SidebarItem>
+              <SidebarItem href="/chat" current={pathname.startsWith('/chat')}>
+                <Cog6ToothIcon />
+                <SidebarLabel>chat</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/settings" current={pathname.startsWith('/settings')}>
                 <Cog6ToothIcon />

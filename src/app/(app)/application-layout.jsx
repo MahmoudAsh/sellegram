@@ -126,11 +126,15 @@ export function ApplicationLayout({ events, children }) {
               </SidebarItem>
               <SidebarItem href="/events" current={pathname.startsWith('/events')}>
                 <Square2StackIcon />
-                <SidebarLabel>Events</SidebarLabel>
+                <SidebarLabel>Products</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/orders" current={pathname.startsWith('/orders')}>
                 <TicketIcon />
                 <SidebarLabel>Orders</SidebarLabel>
+              </SidebarItem>
+              <SidebarItem href="/chat" current={pathname.startsWith('/chat')}>
+                <TicketIcon />
+                <SidebarLabel>Chat</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/settings" current={pathname.startsWith('/settings')}>
                 <Cog6ToothIcon />

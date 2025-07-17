@@ -138,6 +138,10 @@ export function ApplicationLayout({
                 <TicketIcon />
                 <SidebarLabel>Orders</SidebarLabel>
               </SidebarItem>
+              <SidebarItem href="/chat" current={pathname.startsWith('/chat')}>
+                <ChatIcon />
+                <SidebarLabel>Chat</SidebarLabel>
+              </SidebarItem>
               <SidebarItem href="/settings" current={pathname.startsWith('/settings')}>
                 <Cog6ToothIcon />
                 <SidebarLabel>Settings</SidebarLabel>
