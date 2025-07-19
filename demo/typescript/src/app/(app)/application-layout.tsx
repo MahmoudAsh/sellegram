@@ -40,8 +40,11 @@ import {
   SparklesIcon,
   Square2StackIcon,
   TicketIcon,
+  ChatBubbleLeftRightIcon,
 } from '@heroicons/react/20/solid'
 import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
+import { Switch } from '@/components/switch'
 
 function AccountDropdownMenu({ anchor }: { anchor: 'top start' | 'bottom end' }) {
   return (
@@ -76,6 +79,25 @@ export function ApplicationLayout({
   children: React.ReactNode
 }) {
   let pathname = usePathname()
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('darkMode') === 'true'
+    }
+    return false
+  })
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+    localStorage.setItem('darkMode', isDarkMode.toString())
+  }, [isDarkMode])
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode)
+  }
 
   return (
     <SidebarLayout
@@ -139,22 +161,13 @@ export function ApplicationLayout({
                 <SidebarLabel>Orders</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/chat" current={pathname.startsWith('/chat')}>
-                <ChatIcon />
+                <ChatBubbleLeftRightIcon />
                 <SidebarLabel>Chat</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/settings" current={pathname.startsWith('/settings')}>
                 <Cog6ToothIcon />
                 <SidebarLabel>Settings</SidebarLabel>
               </SidebarItem>
-            </SidebarSection>
-
-            <SidebarSection className="max-lg:hidden">
-              <SidebarHeading>Upcoming Events</SidebarHeading>
-              {events.map((event) => (
-                <SidebarItem key={event.id} href={event.url}>
-                  {event.name}
-                </SidebarItem>
-              ))}
             </SidebarSection>
 
             <SidebarSpacer />
@@ -187,6 +200,10 @@ export function ApplicationLayout({
               </DropdownButton>
               <AccountDropdownMenu anchor="top start" />
             </Dropdown>
+            <SidebarItem>
+              <SidebarLabel>Dark Mode</SidebarLabel>
+              <Switch checked={isDarkMode} onChange={toggleDarkMode} />
+            </SidebarItem>
           </SidebarFooter>
         </Sidebar>
       }
